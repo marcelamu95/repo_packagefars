@@ -1,0 +1,95 @@
+---
+title: "use_fars_function"
+author: "Lina Marcela Garzon Muñoz"
+date: "2019-09-13"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to the packagefars package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Load Packages
+
+```{r}
+library(packagefars)
+```
+
+This document describes how to use the packagefars package and the example.
+
+packagefars package includes five functions described below with their respective examples.
+
+
+
+## Included data
+
+The functions of  this package using data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System for three years (2013, 2014, 2015)
+
+Data files included within the package are:
+
+
+
+```{r Setup, include = FALSE}
+knitr::opts_chunk$set(# Collapse output blocks
+                      collapse = TRUE, 
+                      comment = "#>", 
+                      fig.width = 7, 
+                      fig.height = 7, 
+                      fig.align = "center")
+# We set the working directory where the compressed files are stored within the
+# package.
+x <- system.file("extdata", package = "packagefars")
+knitr::opts_knit$set(root.dir = x)
+library(packagefars)
+```
+
+```{r}
+list.files(system.file("extdata", package = "packagefars"))
+```
+
+## Functions 1: fars_read
+This function receives a .csv file and returns tbl_df of the data.This function print an error message when  .csv file does not exist
+
+```{r}
+function1 <- fars_read("accident_2013.csv.bz2")
+```
+
+## Functions 2: make_filename 
+
+This function allows you to create accident data files per year receive the file in csv.bz2 format
+
+```{r}
+make_filename(2013)
+```
+
+
+### Functions 3:`fars_read_years`
+This function receives a list of years (one or several years) and calls the make_filename() function for each year and then fills those files with  the corresponding year data from the main data set.
+
+
+```{r}
+fars_read_years(years = 2013)
+```
+
+### Function 4 `fars_summarize_years`
+
+Receive a list of years (one or several years) . This function receives a set of data with the month and year columns, count the number number of fatalities by month for each given yea.
+
+```{r}
+# Creates a table by month & year with the total number of fatalities in 2013 y 2014.
+data_2013 <- fars_summarize_years(c(2013,2014))
+data_2013
+```
+
+### Function 5  `fars_map_state` 
+
+This function creates a map with the car fatalities in a US state and a specific year.
+
+```{r}
+# Plots the car fatalities for the state of Florida (12) in 2015. 
+fars_map_state(12, 2015)
+```
+
+
+
+
