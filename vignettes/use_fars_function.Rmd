@@ -1,6 +1,7 @@
 ---
 title: "use_fars_function"
 author: "Lina Marcela Garzon Muñoz"
+email: lgarzon@grupobit.net
 date: "2019-09-13"
 output: rmarkdown::html_vignette
 vignette: >
