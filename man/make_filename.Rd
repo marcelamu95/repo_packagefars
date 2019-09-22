@@ -20,5 +20,4 @@ receive the file in csv.bz2 format
 \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
 \dontrun{make_filename(2013)}
 \dontrun{setwd(x)}
-
 }

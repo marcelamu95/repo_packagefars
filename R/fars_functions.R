@@ -37,13 +37,12 @@ fars_read <- function(filename) {
 #'
 #' @return a filename in the format 'accident_year.csv.bz2'. The function prints the file name.
 #'
+#' @export
+#'
 #' @examples
 #' \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
 #' \dontrun{make_filename(2013)}
 #' \dontrun{setwd(x)}
-#'
-#' @export
-
 
 make_filename <- function(year) {
   year <- as.integer(year)
@@ -113,6 +112,7 @@ fars_read_years <- function(years) {
 #' @importFrom tidyr spread
 #'
 #' @examples
+#'
 #' \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
 #' # Summary with the tallies of car fatalities in 2013.
 #' \dontrun{fars_summarize_years(2013)}
@@ -156,7 +156,6 @@ fars_summarize_years <- function(years) {
 #' # We set the working directory where the compressed files are stored within
 #' # the package.
 #' \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
-#' \dontrun{fars_map_state(12, 2015)}
 #' \dontrun{setwd(x)}
 
 fars_map_state <- function(state.num, year) {
@@ -181,3 +180,4 @@ fars_map_state <- function(state.num, year) {
 }
 
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("MONTH", "STATE", "n", "year"))
+

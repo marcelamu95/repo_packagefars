@@ -30,6 +30,5 @@ Uses make_filename(year)
 # We set the working directory where the compressed files are stored within
 # the package.
 \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
-\dontrun{fars_map_state(12, 2015)}
 \dontrun{setwd(x)}
 }

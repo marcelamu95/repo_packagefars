@@ -23,6 +23,7 @@ per month for each year.
 Uses fars_read_years(years)
 }
 \examples{
+
 \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
 # Summary with the tallies of car fatalities in 2013.
 \dontrun{fars_summarize_years(2013)}
