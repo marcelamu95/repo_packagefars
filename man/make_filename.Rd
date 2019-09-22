@@ -17,7 +17,7 @@ This function allows you to create accident data files per year
 receive the file in csv.bz2 format
 }
 \examples{
-\dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
-\dontrun{make_filename(2013)}
-\dontrun{setwd(x)}
+x <- setwd(system.file("extdata", package = "packagefars"))
+make_filename(2013)
+setwd(x)
 }

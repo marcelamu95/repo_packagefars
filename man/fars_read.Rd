@@ -21,7 +21,7 @@ This function print an error message when  .csv file does not exist
 }
 \examples{
 
-\dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
-\dontrun{fars_read("accident_2013.csv.bz2")}
-\dontrun{setwd(x)}
+x <- setwd(system.file("extdata", package = "packagefars"))
+fars_read("accident_2013.csv.bz2")
+setwd(x)
 }

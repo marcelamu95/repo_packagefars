@@ -26,10 +26,10 @@ be generated and the function will stop
 Uses make_filename(year)
 }
 \examples{
-\dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
+x <- setwd(system.file("extdata", package = "packagefars"))
 # Data with the car fatalities in 2013.
-\dontrun{fars_read_years(2013)}
+fars_read_years(2013)
 # Data with the car fatalities in 2013 and 2014.
-\dontrun{fars_read_years(c(2013, 2014))}
-\dontrun{setwd(x)}
+fars_read_years(c(2013, 2014))
+setwd(x)
 }

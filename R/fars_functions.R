@@ -15,9 +15,9 @@
 #'
 #' @examples
 #'
-#' \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
-#' \dontrun{fars_read("accident_2013.csv.bz2")}
-#' \dontrun{setwd(x)}
+#' x <- setwd(system.file("extdata", package = "packagefars"))
+#' fars_read("accident_2013.csv.bz2")
+#' setwd(x)
 
 fars_read <- function(filename) {
   if(!file.exists(filename))
@@ -40,9 +40,9 @@ fars_read <- function(filename) {
 #' @export
 #'
 #' @examples
-#' \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
-#' \dontrun{make_filename(2013)}
-#' \dontrun{setwd(x)}
+#' x <- setwd(system.file("extdata", package = "packagefars"))
+#' make_filename(2013)
+#' setwd(x)
 
 make_filename <- function(year) {
   year <- as.integer(year)
@@ -71,12 +71,12 @@ make_filename <- function(year) {
 #' @importFrom dplyr mutate select %>%
 #'
 #' @examples
-#' \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
+#' x <- setwd(system.file("extdata", package = "packagefars"))
 #' # Data with the car fatalities in 2013.
-#' \dontrun{fars_read_years(2013)}
+#' fars_read_years(2013)
 #' # Data with the car fatalities in 2013 and 2014.
-#' \dontrun{fars_read_years(c(2013, 2014))}
-#' \dontrun{setwd(x)}
+#' fars_read_years(c(2013, 2014))
+#' setwd(x)
 
 fars_read_years <- function(years) {
   lapply(years, function(year) {
@@ -113,12 +113,12 @@ fars_read_years <- function(years) {
 #'
 #' @examples
 #'
-#' \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
+#' x <- setwd(system.file("extdata", package = "packagefars"))
 #' # Summary with the tallies of car fatalities in 2013.
-#' \dontrun{fars_summarize_years(2013)}
+#' fars_summarize_years(2013)
 #' # Summary with the tallies of car fatalities in 2013 and 2014.
-#' \dontrun{fars_summarize_years(c(2013, 2014))}
-#' \dontrun{setwd(x)}
+#' fars_summarize_years(c(2013, 2014))
+#' setwd(x)
 
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
@@ -155,8 +155,8 @@ fars_summarize_years <- function(years) {
 #' @examples
 #' # We set the working directory where the compressed files are stored within
 #' # the package.
-#' \dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
-#' \dontrun{setwd(x)}
+#' x <- setwd(system.file("extdata", package = "packagefars"))
+#' setwd(x)
 
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)

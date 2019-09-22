@@ -29,6 +29,6 @@ Uses make_filename(year)
 \examples{
 # We set the working directory where the compressed files are stored within
 # the package.
-\dontrun{x <- setwd(system.file("extdata", package = "packagefars"))}
-\dontrun{setwd(x)}
+x <- setwd(system.file("extdata", package = "packagefars"))
+setwd(x)
 }
