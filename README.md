@@ -11,10 +11,10 @@
 
 
 ---
-title: "use_package_packagefars"
-author: "Lina Marcela Garzon Muñoz"
+title: use_package_packagefars
+author: Lina Marcela Garzon Muñoz
 email: lgarzon@grupobit.net
-date: "2019-09-13"
+date: 2019-09-13
 ---
 
 ## Create Example Package in R 
